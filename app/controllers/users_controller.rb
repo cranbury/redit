@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    #binding.pry
+
     if @user.save
       redirect_to user_path(@user)
     else
@@ -15,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
   
 

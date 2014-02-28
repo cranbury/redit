@@ -1,17 +1,17 @@
 <h2> Sign Up </h2>
 
     <%= form_for @user do |f| %>
-      <% f.label :email %>
-      <% f.email_field :email %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
 
-      <% f.label :username %>
-      <% f.email_field :username %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
 
-      <% f.label :password %>
-      <% f.email_field :password %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
 
-      <% f.label :password_confirmation %>
-      <% f.email_field :password_confirmation %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
 
-      <%= f.submit %>
+      <%= f.submit name: "Create User"%>
       <% end %>
