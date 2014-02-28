@@ -18,9 +18,6 @@ describe "a user can login and logout" do
 
     expect(page).to have_content("user1")
 
-    # expect(page).to have_content("logout")
-
-
   end
 
   it "lets the user sign in" do
@@ -32,7 +29,7 @@ describe "a user can login and logout" do
     fill_in "password", with: "password"
 
     click_button "Login" 
-        # save_and_open_page
+
     expect(page).to have_content("You are logged in")
   end
 
@@ -49,7 +46,7 @@ describe "a user can login and logout" do
     # expect(page).to have_content("You are logged in")
 
     click_button "Logout"
-    save_and_open_page
+
     expect(page).to have_content("You are logged out")
 
   end
