@@ -23,7 +23,7 @@ describe "a user can login and logout" do
 
   end
 
-  it "let's the user sign in" do
+  it "lets the user sign in" do
     visit root_path
     
     click_button "Go to Login"
@@ -32,10 +32,28 @@ describe "a user can login and logout" do
     fill_in "password", with: "password"
 
     click_button "Login" 
-        save_and_open_page
+        # save_and_open_page
     expect(page).to have_content("You are logged in")
+  end
+
+  it "lets the user log out" do 
+    visit root_path
+    
+    click_button "Go to Login"
+
+    fill_in "username", with: user.username
+    fill_in "password", with: "password"
+
+    click_button "Login" 
+        
+    # expect(page).to have_content("You are logged in")
+
+    click_button "Logout"
+    save_and_open_page
+    expect(page).to have_content("You are logged out")
 
   end
+    
 
 end
 
