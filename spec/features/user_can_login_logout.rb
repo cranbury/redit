@@ -5,6 +5,7 @@ describe "a user can login and logout" do
 
   it "creates a user" do
     visit root_path
+    
 
 
   end
