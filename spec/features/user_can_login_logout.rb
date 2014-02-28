@@ -16,13 +16,30 @@ describe "a user can login and logout" do
 
     click_button "Create User"
 
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content("user1")
+
+    # expect(page).to have_content("logout")
 
 
   end
 
+  it "let's the user sign in" do
+    visit root_path
+
+    save_and_open_page
+    
+    click_button "Go to Login"
+
+    fill_in "user_username", with: "user1"
+    fill_in "user_password", with: "password"
+
+    click_button "Login" 
+
+    expect(page).to have_content("You are logged in")
+
+  end
 
 end
 
